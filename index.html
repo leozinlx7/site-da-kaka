@@ -1,0 +1,252 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Para Karina, minha Cupim ❤️</title>
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;color:#fff4fa;background:#100b20;
+ font-family:Georgia,serif;overflow-x:hidden;
+}
+body:before{
+ content:"";position:fixed;inset:0;z-index:-1;
+ background:radial-gradient(ellipse at 15% 20%,#49214d,transparent 45%),
+ radial-gradient(ellipse at 85% 75%,#202a53,transparent 45%),#100b20;
+}
+#stars{position:fixed;inset:0;pointer-events:none;z-index:-1}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:white;
+ animation:twinkle 3s infinite alternate}
+@keyframes twinkle{to{opacity:1;transform:scale(2)}}
+.screen{
+ min-height:100vh;display:flex;align-items:center;justify-content:center;
+ text-align:center;padding:25px;
+}
+.intro{max-width:750px;animation:appear 1.5s}
+.eyebrow{color:#ffdca0;font:11px Arial;letter-spacing:4px;text-transform:uppercase}
+h1{font-size:clamp(42px,9vw,100px);font-weight:normal;line-height:1;margin:25px 0}
+h1 span,.pink{color:#ff8db8;font-style:italic}
+.intro p{line-height:1.8;color:#e5d7e8;font-size:18px}
+button{
+ border:1px solid #ffb8d3;border-radius:40px;padding:14px 23px;
+ background:linear-gradient(135deg,#ff9fc3,#f06eaa);
+ color:#2a1025;font-weight:bold;cursor:pointer;margin:8px;
+}
+button:hover{transform:translateY(-2px)}
+main{display:none}
+main.show{display:block;animation:appear 1.5s}
+.hero{
+ min-height:85vh;display:flex;align-items:center;justify-content:center;
+ text-align:center;padding:40px 20px;
+}
+.hero h2{font-size:clamp(48px,11vw,120px);font-weight:normal;line-height:.95}
+.hero p{line-height:1.8;color:#e5d7e8}
+.section{max-width:900px;margin:auto;padding:75px 20px}
+.kicker{text-align:center;color:#ffdca0;font:11px Arial;letter-spacing:3px;text-transform:uppercase}
+.section h2{text-align:center;font-size:clamp(30px,6vw,60px);font-weight:normal}
+.letter{
+ padding:clamp(23px,5vw,55px);border-radius:22px;
+ background:linear-gradient(140deg,#fff8f2,#fce9f2);color:#39223c;
+ box-shadow:0 20px 70px #0005;
+}
+.letter p{font-size:18px;line-height:1.95;margin-bottom:20px}
+.sign{font-style:italic;color:#a63e76;font-size:22px;margin-top:30px}
+.quote{text-align:center;padding:90px 20px;background:#ff8db80c}
+.quote blockquote{max-width:800px;margin:25px auto;font-size:clamp(26px,5vw,50px);line-height:1.4;font-style:italic}
+.quote p{color:#ffdca0;font:12px Arial;letter-spacing:3px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.card{padding:25px 18px;border:1px solid #ffffff25;border-radius:18px;text-align:center;background:#ffffff08}
+.card .emoji{font-size:32px}
+.card h3{color:#ff8db8;font-weight:normal}
+.card p{line-height:1.7;color:#dfd1e5}
+.final{min-height:75vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:60px 20px}
+.final h2{font-size:clamp(42px,9vw,95px);font-weight:normal;line-height:1}
+.final p{max-width:650px;line-height:1.9;color:#e5d7e8}
+footer{text-align:center;padding:25px;color:#b8a6c3;font:11px Arial;letter-spacing:2px}
+.heart{position:fixed;bottom:-35px;z-index:10;pointer-events:none;animation:floatUp 7s linear forwards}
+@keyframes floatUp{to{transform:translateY(-110vh) rotate(25deg);opacity:0}}
+@keyframes appear{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+#musicBox{
+ position:fixed;bottom:15px;right:12px;z-index:20;
+ display:none;align-items:center;gap:5px;padding:8px;
+ border:1px solid #ff8db877;border-radius:30px;background:#24152ef2;
+ box-shadow:0 5px 25px #0006;font:12px Arial;
+}
+#musicBox button{padding:9px 12px;margin:0}
+@media(max-width:650px){.cards{grid-template-columns:1fr}.section{padding:55px 16px}.letter p{font-size:16px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<div id="stars"></div>
+
+<audio id="music" preload="auto">
+ <source src="Sweater_Weather.mp3" type="audio/mpeg">
+</audio>
+
+<div id="musicBox">
+ <span style="color:#ff8db8">♫ Sweater Weather</span>
+ <button id="musicToggle">Tocar música</button>
+</div>
+
+<section class="screen" id="opening">
+ <div class="intro">
+  <div class="eyebrow">Uma surpresa para alguém gigante</div>
+  <h1>Hoje o mundo celebra<br><span>você, Karina.</span></h1>
+  <p>Existe uma mensagem guardada aqui. Uma que talvez eu não fale todos os dias, mas que você merece ouvir.</p>
+  <button id="openGift">Abrir sua surpresa ❤️</button>
+  <p style="font:11px Arial;letter-spacing:2px">FEITO COM AMOR PARA MINHA TESTUDINHA KKKKKKK</p>
+ </div>
+</section>
+
+<main id="story">
+ <section class="hero">
+  <div>
+   <div class="eyebrow">Para a melhor irmã do mundo, minha parceira, minha Cupim ❤️</div>
+   <h2>Feliz aniversário,<br><span class="pink">Karina.</span></h2>
+   <p>Hoje é o seu dia, mas quem tem a sorte de ter você por perto também ganhou um presente.</p>
+   <a href="#mensagem" style="color:#ffdca0">DESÇA PARA LER ↓</a>
+  </div>
+ </section>
+
+ <section class="section" id="mensagem">
+  <div class="kicker">De coração, para você</div>
+  <h2>Uma coisa que quero que você saiba</h2>
+  <article class="letter">
+   <p>Karina, minha Cupim, feliz aniversário! ❤️🎂</p>
+   <p>Eu queria conseguir colocar em palavras tudo o que você significa para mim, mas existem sentimentos que parecem grandes demais para caber em algumas frases. Mesmo assim, hoje eu precisava tentar, porque você merece saber o quanto é importante para mim.</p>
+   <p>Ter você como irmã é ter alguém que faz parte da minha história de um jeito que ninguém mais poderia fazer. São nossas conversas, nossas risadas, as brincadeiras, as implicâncias e aquelas pequenas coisas do dia a dia que acabam virando lembranças preciosas. Talvez eu não fale isso sempre, mas sou muito feliz por ter você comigo.</p>
+   <p>Tenho muito orgulho de ver você construindo seu caminho. Sei que fazer faculdade de Direito exige dedicação, esforço, noites de estudo e persistência. Nem todos os dias serão fáceis, e talvez em alguns momentos você fique cansada ou duvide de si mesma. Quando isso acontecer, lembra de tudo o que já enfrentou e de toda a capacidade que existe em você.</p>
+   <p>Consigo imaginar o dia em que você vai vestir sua beca, receber seu diploma e realizar o sonho de se tornar advogada. Quero muito ver você conquistando seu espaço, defendendo aquilo em que acredita e fazendo a diferença na vida das pessoas. Que você seja uma profissional incrível, mas que nunca perca essa pessoa especial que é hoje. Estarei na torcida por cada prova, cada vitória e cada novo capítulo dessa caminhada.</p>
+   <p>Mas quero que você saiba de uma coisa: antes de qualquer diploma ou título, você já tem um valor enorme. Você não precisa conquistar o mundo para merecer amor, descanso e carinho. Nos dias em que tudo der certo, quero comemorar com você. Nos dias difíceis, quero que se lembre de que não precisa carregar tudo sozinha.</p>
+   <p>Que esse novo ciclo te traga saúde, paz, felicidade, oportunidades e coragem para continuar sonhando grande. Que a vida te surpreenda com coisas bonitas, que você encontre pessoas que cuidem do seu coração e que nunca faltem motivos para sorrir.</p>
+   <p>E, por mais que o tempo passe e um dia você esteja por aí sendo uma advogada incrível, para mim você sempre vai ser minha irmã, minha parceira e minha Cupim. 😂❤️ Vou continuar torcendo por você, comemorando suas conquistas e, claro, enchendo sua paciência sempre que puder. Isso faz parte do contrato de ser seu irmão.</p>
+   <p><strong>Feliz aniversário, Karina. Tenho muito orgulho da pessoa que você é e da mulher que está se tornando. Que você realize seus sonhos e nunca se esqueça de que tem um irmão que te ama muito. Hoje, amanhã e em todos os capítulos da sua vida. ❤️</strong></p>
+   <div class="sign">Com amor, do seu unico e lindo irmão. ❤️</div>
+  </article>
+ </section>
+
+ <section class="quote">
+  <div style="font-size:40px;color:#ff8db8">♥</div>
+  <blockquote>“Um dia o mundo vai conhecer a advogada que você está se tornando. Eu tenho a sorte de conhecer e amar a pessoa incrível que você já é.”</blockquote>
+  <p>PARA SEMPRE MINHA IRMÃ</p>
+ </section>
+
+ <section class="section">
+  <div class="kicker">Meus desejos para você</div>
+  <h2>Que a vida te abrace bonito</h2>
+  <div class="cards">
+   <div class="card"><div class="emoji">🌷</div><h3>Leveza</h3><p>Que seu coração encontre paz e seus dias tenham calma, carinho e motivos para sorrir.</p></div>
+   <div class="card"><div class="emoji">⚖️</div><h3>Realizações</h3><p>Que cada esforço na faculdade te aproxime dos seus sonhos e te leve a uma carreira da qual você se orgulhe.</p></div>
+   <div class="card"><div class="emoji">💗</div><h3>Amor de verdade</h3><p>Que nunca faltem pessoas que te respeitem, te valorizem e te lembrem do quanto você é especial.</p></div>
+  </div>
+ </section>
+
+ <section class="final">
+  <div class="eyebrow">E se você esquecer de tudo lembres-se</div>
+  <h2>Você é amada,<br><span class="pink">minha Cupim.</span> ❤️</h2>
+  <p>Tenho orgulho de você e da profissional que está se preparando para ser. Vou estar torcendo por você em cada prova, cada conquista e cada novo começo.</p>
+  <p><strong>Feliz aniversário, Karina! Que seu novo ano seja lindo do começo ao fim. 🎂</strong></p>
+  <button id="moreHearts">Mandar mais amor 💖</button>
+ </section>
+ <footer>FEITO COM AMOR PARA KARINA ❤️</footer>
+</main>
+
+<script>
+const stars = document.getElementById('stars');
+for(let i=0;i<110;i++){
+ const s=document.createElement('i');
+ s.className='star';
+ s.style.left=Math.random()*100+'%';
+ s.style.top=Math.random()*100+'%';
+ s.style.opacity=Math.random();
+ s.style.animationDelay=(-Math.random()*4)+'s';
+ stars.appendChild(s);
+}
+
+const music=document.getElementById('music');
+const musicBox=document.getElementById('musicBox');
+const musicToggle=document.getElementById('musicToggle');
+let musicStarted=false;
+
+async function startMusic(){
+ musicBox.style.display='flex';
+ musicToggle.textContent='Carregando...';
+ try{
+  // Aguarda os metadados antes de avançar para 35 segundos.
+  if(music.readyState < 1){
+   await new Promise((resolve,reject)=>{
+    music.addEventListener('loadedmetadata',resolve,{once:true});
+    music.addEventListener('error',reject,{once:true});
+    music.load();
+   });
+  }
+  if(music.duration <= 35){
+   musicToggle.textContent='Áudio curto ou inválido';
+   return;
+  }
+  music.currentTime=35;
+  await music.play();
+  musicStarted=true;
+  musicToggle.textContent='Pausar música';
+ }catch(error){
+  console.error('Não foi possível iniciar o áudio:',error);
+  musicToggle.textContent='Tentar tocar música';
+ }
+}
+
+document.getElementById('openGift').addEventListener('click',()=>{
+ startMusic();
+ const opening=document.getElementById('opening');
+ opening.style.transition='opacity .8s, transform .8s';
+ opening.style.opacity='0';
+ opening.style.transform='scale(1.03)';
+ setTimeout(()=>{
+  opening.style.display='none';
+  document.getElementById('story').classList.add('show');
+  window.scrollTo(0,0);
+  burstHearts(24);
+ },800);
+});
+
+musicToggle.addEventListener('click',async()=>{
+ if(music.paused){
+  if(!musicStarted){
+   await startMusic();
+   return;
+  }
+  try{
+   await music.play();
+   musicToggle.textContent='Pausar música';
+  }catch(e){
+   musicToggle.textContent='Tentar tocar música';
+  }
+ }else{
+  music.pause();
+  musicToggle.textContent='Continuar música';
+ }
+});
+
+function makeHeart(){
+ const h=document.createElement('div');
+ h.className='heart';
+ h.textContent=['♥','♡','✦','💗','💕'][Math.floor(Math.random()*5)];
+ h.style.left=Math.random()*100+'vw';
+ h.style.fontSize=(14+Math.random()*25)+'px';
+ h.style.color=['#ff8db8','#ffdca0','#ffc4da','#fff0f5'][Math.floor(Math.random()*4)];
+ document.body.appendChild(h);
+ setTimeout(()=>h.remove(),7500);
+}
+function burstHearts(n){
+ for(let i=0;i<n;i++)setTimeout(makeHeart,i*90);
+}
+setInterval(()=>{
+ if(document.getElementById('story').classList.contains('show')&&Math.random()>.35)makeHeart();
+},900);
+document.getElementById('moreHearts').addEventListener('click',()=>burstHearts(55));
+</script>
+</body>
+</html>
